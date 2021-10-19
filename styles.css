@@ -201,11 +201,12 @@ Card Project
   color: var(--primaryColor);
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .cards-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2rem;
+
   }
 }
 
@@ -213,4 +214,26 @@ Card Project
   .cards-center {
     grid-template-columns: 1fr 1fr 1fr;
   }
+} */
+
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* (1170 - 64)/ 3 = 368.667*/
+/* (1170 - 96)/ 4 = 268.5*/
+
+/* .cards-center {
+  display: grid;
+  grid-column-gap:  2rem;
+  grid-template-columns: repeat(auto-fill, minmax(368.667px, 1fr));
+} */
+
+.cards-center {
+  display: grid;
+  grid-column-gap:  2rem;
+  grid-template-columns: repeat(auto-fill, minmax(268.5px, 1fr));
 }
