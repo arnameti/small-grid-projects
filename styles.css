@@ -6,7 +6,7 @@ Variables
 
 :root {
   --primaryColor: #f15025;
-  --minBlack: #222;
+  --mainBlack: #222;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --darkGrey: #afafaf;
@@ -26,9 +26,8 @@ Global Styles
   box-sizing: border-box;
 }
 
-
 body {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   color: var(--minBlack);
   background: var(--mainWhite);
   line-height: 1.5;
@@ -43,7 +42,9 @@ img {
   display: block;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 1.25rem;
@@ -133,12 +134,10 @@ Hero Project
   display: grid;
   justify-content: center;
   align-items: center;
-  
 }
 
 .hero-banner {
   /* text-align: center; */
- 
 }
 
 .hero-banner p {
@@ -155,8 +154,8 @@ Hero Project
 
 @media screen and (min-width: 768px) {
   .hero-header {
-    background: linear-gradient(rgba(241, 80, 37, 0.75), rgba(0, 0, 0 , 0.75)),
-                url('./images/image-2.jpeg') center/cover fixed no-repeat;
+    background: linear-gradient(rgba(241, 80, 37, 0.75), rgba(0, 0, 0, 0.75)),
+      url("./images/image-2.jpeg") center/cover fixed no-repeat;
   }
 }
 
@@ -216,7 +215,6 @@ Card Project
   }
 } */
 
-
 .card {
   display: grid;
   grid-template-columns: 1fr;
@@ -234,7 +232,7 @@ Card Project
 
 .cards-center {
   display: grid;
-  grid-column-gap:  2rem;
+  grid-column-gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(268.5px, 1fr));
 }
 
@@ -263,7 +261,6 @@ Tiles Project
   }
 }
 
-
 @media screen and (min-width: 992px) {
   .tiles-center {
     grid-template-columns: repeat(3, 1fr);
@@ -273,13 +270,13 @@ Tiles Project
 @media screen and (min-width: 1170px) {
   .tiles-center {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5,  200px);
-    grid-template-areas: 
-    'a a a b'
-    'a a a c'
-    'd d d d'
-    'e f f f'
-    'e g h i';
+    grid-template-rows: repeat(5, 200px);
+    grid-template-areas:
+      "a a a b"
+      "a a a c"
+      "d d d d"
+      "e f f f"
+      "e g h i";
   }
 
   .tiles img {
@@ -321,5 +318,85 @@ Tiles Project
 
   .tile-9 {
     grid-area: i;
+  }
+}
+
+/* 
+===========================
+Layout Project
+===========================
+*/
+
+.header {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.navbar {
+  background: var(--darkGrey);
+}
+
+.navbar li {
+  list-style-type: none;
+}
+
+.navbar a {
+  padding: 1rem;
+  display: inline-block;
+  text-transform: capitalize;
+  letter-spacing: --(--mainSpacing);
+  font-size: 1.2rem;
+  color: var(--mainBlack);
+  transition: var(--mainTransition);
+}
+
+.navbar a:hover {
+  color: var(--mainWhite);
+}
+
+.content {
+  padding: 2rem;
+}
+
+.content p {
+  font-size: 1rem;
+}
+
+.sidebar {
+  background: var(--primaryColor);
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  color: var(--mainWhite);
+  font-size: 1.2rem;
+}
+
+.footer {
+  background: var(--mainBlack);
+  color: var(--mainWhite);
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0.5rem 0;
+}
+
+.footer p {
+  font-size: 1.2rem;
+}
+
+.main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
   }
 }
